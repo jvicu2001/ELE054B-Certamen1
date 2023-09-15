@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface PeliculaService {
     public List<Pelicula> ver();
-    public Pelicula crear();
+    public Pelicula crear(Pelicula pelicula);
     public List<Pelicula> verPorEdad(int edad);
 }

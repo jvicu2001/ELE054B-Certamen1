@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PeliculaServiceImpl implements PeliculaService {
@@ -20,6 +21,8 @@ public class PeliculaServiceImpl implements PeliculaService {
     }
 
     public List<Pelicula> verPorEdad(int edad) {
-        // TODO
+        return peliculas.stream()
+                .filter(pelicula -> pelicula.getEdad_minima()<=edad)
+                .collect(Collectors.toList());
     }
 }
